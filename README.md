@@ -2,6 +2,8 @@ ready2order PHP API
 =============
 
 ready2order PHP API v1 is a PHP-wrapper for simply using ready2order API api.ready2order.at
+Documentation:
+https://app.apiary.io/ready2order/editor
 
 Installation
 ------------
