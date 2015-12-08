@@ -1,0 +1,27 @@
+{
+    "name": "duxthefux/ready2order-php-api-v1",
+    "description": "PHP library for ready2order POS API v1",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*",
+        "vlucas/phpdotenv": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ready2order\\": "src"
+        }
+    },
+    "homepage": "https://github.com/duxthefux/ready2order-php-api-v1",
+    "authors": [ 
+        {
+            "name": "Christopher Fuchs",
+            "email": "developer@ready2order.at",
+            "homepage": "http://www.ready2order.at/"
+
+        }
+    ]
+
+}
