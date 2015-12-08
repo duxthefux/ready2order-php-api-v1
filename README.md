@@ -28,7 +28,7 @@ Examples
 Get client data
 
 ```php
-use \ready2order\ready2orderAPI;;
+use \ready2order\ready2orderAPI;
 
 $ready2orderAPI = new ready2orderAPI('user-token');
 print_r($ready2orderAPI->get('company'));
@@ -37,7 +37,7 @@ print_r($ready2orderAPI->get('company'));
 Insert new productgroup with one product
 
 ```php
-use \ready2order\ready2orderAPI;;
+use \ready2order\ready2orderAPI;
 
 $ready2order = new ready2orderAPI(getenv('R2O_USER_TOKEN'));
 
