@@ -112,7 +112,7 @@ class ready2orderAPI
         } else {
             throw new \Exception("cURL support is required, but can't be found.");
         }
-        echo $result;
+        #echo $result;
         return $result ? json_decode($result, true) : false;
     }
 }
