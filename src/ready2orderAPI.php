@@ -8,7 +8,7 @@ namespace ready2order;
  *
  * Thanks to Drew McLellan for creating drewm/mailchimp-api (https://github.com/drewm/mailchimp-api)
  * This PHP library was written by Dew McLellan and "forked" for using ready2order API because it's just super simple
- * Drew McLellan <drew.mclellan@gmail.com>
+ * @author Drew McLellan <drew.mclellan@gmail.com>
  */
 class ready2orderAPI
 {
