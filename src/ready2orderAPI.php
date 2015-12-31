@@ -13,7 +13,7 @@ namespace ready2order;
 class ready2orderAPI
 {
     private $api_key;
-    private $api_endpoint = 'http://api.r2o.local/v1';
+    private $api_endpoint = 'https://api.ready2order.at/v1';
     
     /*  SSL Verification
         Read before disabling: 
@@ -115,4 +115,15 @@ class ready2orderAPI
 
         return $result ? json_decode($result, true) : false;
     }
+
+    /**
+     * @param string $api_endpoint
+     */
+    public function setApiEndpoint($api_endpoint)
+    {
+        $this->api_endpoint = $api_endpoint;
+    }
+
+
+
 }
