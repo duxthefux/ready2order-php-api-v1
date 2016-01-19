@@ -116,7 +116,8 @@ class ready2orderAPI
         if(!is_null($json = json_decode($result, true))){
             if(!isset($json["error"])) return $json;
 
-            throw new ready2orderException($json["msg"]);
+            if(isset($json["msg"])) throw new ready2orderException($json["msg"]);
+            else throw new ready2orderException("API Request was bad: ".$result);
         } else {
             throw new ready2orderException("API Request was bad: ".$result);
         }
