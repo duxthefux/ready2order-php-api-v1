@@ -14,6 +14,7 @@ class ProductInfoTest extends PHPUnit_Framework_TestCase
     public function testGetProductList()
     {
         $ready2order = new ready2orderAPI(getenv('R2O_USER_TOKEN'));
+        $ready2order->setApiEndpoint(getenv('R2O_API'));
         $info = $ready2order->get('products');
         if(array_key_exists(0,$info)){
             $this->assertArrayHasKey("product_name",$info[0]);
@@ -23,6 +24,7 @@ class ProductInfoTest extends PHPUnit_Framework_TestCase
     public function testInsertProduct()
     {
         $ready2order = new ready2orderAPI(getenv('R2O_USER_TOKEN'));
+        $ready2order->setApiEndpoint(getenv('R2O_API'));
 
         // INSERT PRODUCTGROUP
         $productGroup = $ready2order->put('productgroups',array(
