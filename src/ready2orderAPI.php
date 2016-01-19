@@ -113,7 +113,13 @@ class ready2orderAPI
             throw new \Exception("cURL support is required, but can't be found.");
         }
 
-        return $result ? json_decode($result, true) : false;
+        if(!is_null($json = json_decode($result, true))){
+            if(!isset($json["error"])) return $json;
+
+            throw new ready2orderException($json["msg"]);
+        } else {
+            throw new ready2orderException("API Request was bad: ".$result);
+        }
     }
 
     /**

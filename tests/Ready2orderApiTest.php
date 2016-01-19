@@ -19,6 +19,7 @@ class Ready2orderAPITest extends PHPUnit_Framework_TestCase
 	public function testInstantiation()
 	{
 		$ready2order = new ready2orderAPI(getenv('R2O_USER_TOKEN'));
+		$ready2order->setApiEndpoint(getenv('R2O_API'));
 		$this->assertInstanceOf('\ready2order\ready2orderAPI', $ready2order);
 	}
 

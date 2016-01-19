@@ -11,11 +11,12 @@ class ClientInfoTest extends PHPUnit_Framework_TestCase
 		$dotenv->load();
 	}
 
-	public function testGetLists()
+	public function testGetCompanyInfo()
 	{
 		$ready2order = new ready2orderAPI(getenv('R2O_USER_TOKEN'));
+		$ready2order->setApiEndpoint(getenv('R2O_API'));
 		$info = $ready2order->get('company');
-		
+
 		$this->assertArrayHasKey('company_name', $info);
 	}
 
