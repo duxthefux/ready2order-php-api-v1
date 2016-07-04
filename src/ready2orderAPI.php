@@ -114,9 +114,15 @@ class ready2orderAPI
         }
 
         if(!is_null($json = json_decode($result, true))){
-            return $json;
+
 //            if(!isset($json["error"]) || $json["error"]==false) return $json;
 
+            if(isset($json["error"]) && $json["error"]===true) {
+                $msg = isset($json["msg"]) && !empty($json["msg"]) ? $json["msg"] : $result;
+                throw new ready2orderErrorException($msg);
+            }
+
+            return $json;
 //            if(!$json["error"] && isset($json["msg"])) throw new ready2orderException($json["msg"]);
 //            else throw new ready2orderException("API Request was bad: ".$result);
         } else {
