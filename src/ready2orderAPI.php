@@ -119,7 +119,8 @@ class ready2orderAPI
 
             if(isset($json["error"]) && $json["error"]===true) {
                 $msg = isset($json["msg"]) && !empty($json["msg"]) ? $json["msg"] : $result;
-                throw new ready2orderErrorException($msg);
+                $code = isset($json["code"]) && !empty($json["code"]) ? $json["code"] : 0;
+                throw new ready2orderErrorException($msg, $code);
             }
 
             return $json;
