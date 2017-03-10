@@ -9,7 +9,5 @@
 namespace ready2order;
 
 
-class ready2orderException extends \ErrorException
-{
-
-}
+class ready2orderException extends \ErrorException{}
+class ready2orderCurlException extends \ErrorException{}

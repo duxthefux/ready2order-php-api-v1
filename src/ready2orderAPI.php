@@ -108,10 +108,15 @@ class ready2orderAPI
 
 
             $result = curl_exec($ch);
+	        $error = curl_error($ch);
             curl_close($ch);
         } else {
             throw new \Exception("cURL support is required, but can't be found.");
         }
+
+	    if($error){
+		    throw new ready2orderCurlException("There was a problem with the request! ".$error);
+	    }
 
         if(!is_null($json = json_decode($result, true))){
 
