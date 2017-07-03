@@ -13,7 +13,7 @@ namespace ready2order;
 class ready2orderAPI
 {
     private $api_key;
-    private $api_endpoint = 'https://api.ready2order.at/v1';
+    private $api_endpoint = 'https://api.ready2order.com/v1';
     
     /*  SSL Verification
         Read before disabling: 
