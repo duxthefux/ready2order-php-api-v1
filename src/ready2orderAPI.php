@@ -21,6 +21,9 @@ class ready2orderAPI
     */
     public  $verify_ssl   = true; 
 
+    protected $rawResponse;
+    protected $jsonResponse;
+    protected $throwExceptionOnError = true;
     /**
      * Create a new instance
      * @param string $api_key Your ready2order API key
@@ -118,13 +121,16 @@ class ready2orderAPI
 		    throw new ready2orderCurlException("There was a problem with the request! ".$error);
 	    }
 
+	    $this->rawResponse = $result;
+
         if(!is_null($json = json_decode($result, true))){
 
-//            if(!isset($json["error"]) || $json["error"]==false) return $json;
+        	$this->jsonResponse = $json;
+//           if(!isset($json["error"]) || $json["error"]==false) return $json;
 
             if(isset($json["error"]) && $json["error"]===true) {
                 $msg = isset($json["msg"]) && !empty($json["msg"]) ? $json["msg"] : $result;
-                throw new ready2orderErrorException($msg);
+                if($this->throwExceptionOnError) throw new ready2orderErrorException($msg);
             }
 
             return $json;
@@ -142,6 +148,55 @@ class ready2orderAPI
     {
         $this->api_endpoint = $api_endpoint;
     }
+
+	/**
+	 * @return mixed
+	 */
+	public function getRawResponse()
+	{
+		return $this->rawResponse;
+	}
+
+	/**
+	 * @param mixed $rawResponse
+	 */
+	public function setRawResponse($rawResponse)
+	{
+		$this->rawResponse = $rawResponse;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getJsonResponse()
+	{
+		return $this->jsonResponse;
+	}
+
+	/**
+	 * @param mixed $jsonResponse
+	 */
+	public function setJsonResponse($jsonResponse)
+	{
+		$this->jsonResponse = $jsonResponse;
+	}
+
+	/**
+	 * @return boolean
+	 */
+	public function getThrowExceptionOnError()
+	{
+		return $this->throwExceptionOnError;
+	}
+
+	/**
+	 * @param boolean $throwExceptionOnError
+	 */
+	public function setThrowExceptionOnError($throwExceptionOnError)
+	{
+		$this->throwExceptionOnError = $throwExceptionOnError;
+	}
+
 
 
 
