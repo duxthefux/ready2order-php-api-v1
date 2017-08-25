@@ -1,14 +1,15 @@
 ready2order PHP API
 =============
 
-ready2order PHP API v1 is a PHP-wrapper for simply using ready2order API api.ready2order.at
+ready2order PHP API v1 is a PHP-wrapper for simply using ready2order API [api.ready2order.com](https://api.ready2order.com)
 
-Website: www.ready2order.at
+Official website: www.ready2order.com
 
 Documentation:
-http://docs.ready2order.apiary.io/
+* [Developer registration](https://api.ready2order.com)
+* [Documentation](http://docs.ready2order.apiary.io/)
 
-Please contact developer@ready2order.at to get your secret master token!
+Please contact developer@ready2order.com to get your secret master token!
 
 Installation
 ------------
