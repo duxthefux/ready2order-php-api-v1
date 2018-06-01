@@ -52,7 +52,7 @@ class ProductInfoTest extends PHPUnit_Framework_TestCase
         $testValues["product_vat"] = 10;
         $testValues["product_price"] = 2009.91;
         $testValues["product_stock_value"] = 12.5;
-        $testValues["product_stock_enabled"] = 1;
+        $testValues["product_stock_enabled"] = false;
         $testValues["product_description"] = "ready2order API tested successfully!";
         $testValues["product_itemnumber"] = "PHP15XX";
         $testValues["product_barcode"] = "1234567890";
