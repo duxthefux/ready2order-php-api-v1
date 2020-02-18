@@ -9,7 +9,9 @@ Documentation:
 * [Developer registration](https://api.ready2order.com)
 * [Documentation](http://docs.ready2order.apiary.io/)
 
-Please contact developer@ready2order.com to get your secret master token!
+To aquire the needed developer token please visit [ready2order.com/at/api/zugang/](https://ready2order.com/at/api/zugang/).
+
+If you need further support check out [support.ready2order.com](https://support.ready2order.com/l/de).
 
 Installation
 ------------
