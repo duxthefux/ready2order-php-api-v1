@@ -3,6 +3,7 @@
     "description": "PHP library for ready2order POS API v1",
     "license": "MIT",
     "version" : "1.0.6",
+    "abandoned": "ready2order/r2o-api-client-php",
     "require": {
         "php": ">=5.5"
     },
